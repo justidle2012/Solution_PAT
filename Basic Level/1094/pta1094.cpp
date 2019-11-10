@@ -17,7 +17,6 @@ bool isPrime(int n) {
 int main() {
     int l, k;
     char data[1002];
-    char ans[10];
     scanf("%d %d %s", &l, &k, data);
 
     int num;//判断这个数是否是质数
@@ -25,14 +24,14 @@ int main() {
     for (i=0; i+k<=strlen(data); i++) {
         num = 0;
         for (j=0; j<k; j++) {
-            ans[j] = data[j+i];
-            num = num*10 + (ans[j]-'0');
+            num = num*10 + (data[j+i]-'0');
         }
-        ans[j] = '\0';
 
         //测试数据
         if (isPrime(num)) {
-            printf("%s\n", ans);
+            data[i+j] = '\0';
+            printf("%s\n", &data[i]);
+
             return 0;
         }
     }
