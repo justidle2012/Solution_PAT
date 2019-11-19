@@ -17,9 +17,9 @@ struct PTASCORE {
 };
 
 bool mycmp(const std::pair<std::string, PTASCORE> &x, const std::pair<std::string, PTASCORE> &y) {
-    if (x.second.score != y.second.score) {
+    if ((int)x.second.score != (int)y.second.score) {
         //加权总分
-        return x.second.score > y.second.score;
+        return (int)x.second.score > (int)y.second.score;
     } else {
         if (x.second.cnts != y.second.cnts) {
             //考生人数升序
